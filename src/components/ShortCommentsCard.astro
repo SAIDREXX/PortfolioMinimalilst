@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+import GithubLogo from "@/components/Icons/GithubLogo.astro";
+import JavaScriptLogo from "@/components/Icons/JavascriptLogo.astro";
+import TypeScriptLogo from "@/components/Icons/TypescriptLogo.astro";
+import NodeLogo from "@/components/Icons/NodeLogo.astro";
+import ShortCommentImage from "@/img/code.webp";
+---
+
+<div
+  class="flex flex-col w-full bg-[f8f8ed] shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
+>
+  <div class="rounded-xl overflow-hidden">
+    <Image class="" src={ShortCommentImage} alt="Short Comment Image" />
+  </div>
+
+  <article class="font-Onest">
+    <h1 class="font-bold text-secondary text-xl pt-3">HTML Short Comment</h1>
+
+    <ul class="flex gap-2 items-center justify-between pr-2">
+      <li>
+        <small class="font-medium text-tertiary">VS Code Extension</small>
+      </li>
+      <ul class="flex gap-2 items-center">
+        <li>
+          <a
+            href="https://github.com/SAIDREXX/HTML-Short-Comments"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><GithubLogo className="w-5 h-5" opacity="0.3" /></a
+          >
+        </li>
+        <li><JavaScriptLogo /></li>
+        <li><TypeScriptLogo /></li>
+        <li><NodeLogo /></li>
+      </ul>
+    </ul>
+
+    <p class="pt-2 text-balance">
+      Esta extensión permite mejorar el rendimiento de desarrolladores al hacer
+      comentarios en <strong>Astro, HTML, SVG y XML</strong> permitiendo escribir
+      una linea de texto a comentar y añadir el delimitador de comentarios al final
+      para convertir dicha linea en un comentario de tipo &lt;!-- --&gt;
+    </p>
+  </article>
+</div>

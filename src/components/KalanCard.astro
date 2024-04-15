@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+
+import DartLogo from "./Icons/DartLogo.astro";
+import FeatureProjectImage from "@/img/KalanLogo.webp";
+import FirebaseLogo from "./Icons/FirebaseLogo.astro";
+import FlutterLogo from "./Icons/FlutterLogo.astro";
+---
+
+<div
+  id="card"
+  class="card flipped flex w-full bg-background shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
+>
+  <div class="front flex gap-4 items-center">
+    <div
+      class="md:w-28 overflow-hidden rounded-full md:border-8 border-4 border-tertiary"
+    >
+      <Image src={FeatureProjectImage} alt="Imagen de Kalan" />
+    </div>
+    <div class="w-full text-pretty">
+      <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
+        Kalan App
+      </h1>
+
+      <p class="font-Onest font-medium">
+        Kalan is an application whose objective is to <strong
+          >monitor the real-time location of your loved ones.</strong
+        > It has innovative features such as monitoring <strong
+          >priority levels</strong
+        >, a secure folder to <strong>protect your personal documents</strong> and
+        dynamic emergency <strong
+          >numbers that change depending on your current location.</strong
+        >
+      </p>
+    </div>
+  </div>
+  <div class="back absolute flex flex-col items-center w-full h-full pt-8 pr-8">
+    <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
+      Kalan App
+    </h1>
+    <ul class="flex">
+      <li><DartLogo /></li>
+      <li><FirebaseLogo /></li>
+      <li><FlutterLogo /></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const card = document.getElementById("card");
+  card?.addEventListener("click", () => {
+    card.classList.toggle("flipped");
+  });
+</script>
+
+<style>
+  .card {
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+  }
+
+  .front {
+    backface-visibility: hidden;
+  }
+  .back {
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+  }
+  .card.flipped {
+    transform: perspective(600px) rotateX(180deg);
+  }
+</style>
