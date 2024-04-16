@@ -2,14 +2,15 @@
 interface Props {
   className?: string;
   opacity?: string;
+  color?: string;
 }
-const { className, opacity } = Astro.props;
+const { className, opacity, color } = Astro.props;
 ---
 
 <svg
   viewBox="0 0 256 250"
   class=`${className}`
-  fill="#54787d"
+  fill=`${color}`
   fill-opacity=`${opacity}`
   xmlns="http://www.w3.org/2000/svg"
   preserveAspectRatio="xMidYMid"
