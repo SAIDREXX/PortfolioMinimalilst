@@ -1,5 +1,7 @@
 ---
+import Footer from "@/components/Footer.astro";
 import "@fontsource-variable/onest";
+
 interface Props {
   title: string;
 }
@@ -8,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html class="bg-background" lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="@saidrexx Portfolio" />
@@ -20,9 +22,26 @@ const { title } = Astro.props;
   <body>
     <slot />
   </body>
+  <footer>
+    <Footer />
+  </footer>
 </html>
+
 <style is:global>
-  html {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
     background: #f8f8ec;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3b535a;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #243236;
   }
 </style>
