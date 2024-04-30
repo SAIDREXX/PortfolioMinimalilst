@@ -9,10 +9,15 @@ import ShortCommentImage from "@/img/code.webp";
 ---
 
 <div
-  class="flex flex-col w-full bg-[f8f8ed] shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
+  class="flex flex-col w-full bg-[f8f8ed] shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary hover:scale-105 duration-500 ease-in-out"
 >
   <div class="rounded-xl overflow-hidden">
-    <Image class="" src={ShortCommentImage} alt="Short Comment Image" />
+    <Image
+      class=""
+      src={ShortCommentImage}
+      alt="Short Comment"
+      loading="eager"
+    />
   </div>
 
   <article class="font-Onest">
@@ -28,6 +33,7 @@ import ShortCommentImage from "@/img/code.webp";
             href="https://github.com/SAIDREXX/HTML-Short-Comments"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Github Repository"
             ><GithubLogo className="w-5 h-5" opacity="0.3" /></a
           >
         </li>
@@ -38,10 +44,10 @@ import ShortCommentImage from "@/img/code.webp";
     </ul>
 
     <p class="pt-2 text-balance">
-      Esta extensión permite mejorar el rendimiento de desarrolladores al hacer
-      comentarios en <strong>Astro, HTML, SVG y XML</strong> permitiendo escribir
-      una linea de texto a comentar y añadir el delimitador de comentarios al final
-      para convertir dicha linea en un comentario de tipo &lt;!-- --&gt;
+      This extension allows to improve the performance of developers when
+      commenting in <strong>Astro, HTML, SVG y XML</strong> by allowing to write
+      a line of text to comment and add the comment delimiter at the end to convert
+      that line into a comment of type &lt;!-- --&gt;
     </p>
   </article>
 </div>
