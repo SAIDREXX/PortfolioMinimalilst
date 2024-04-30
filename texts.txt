@@ -1,0 +1,1 @@
+Esta extensión permite mejorar el rendimiento de desarrolladores al hacer comentarios en Astro, HTML, SVG y XML permitiendo escribir una linea de texto a comentar y añadir el delimitador de comentarios al final para convertir dicha linea en un comentario de tipo
