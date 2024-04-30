@@ -9,20 +9,27 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
 
 <div
   id="card"
-  class="card flipped flex w-full bg-background shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
+  class="card flex w-full bg-background shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
 >
   <div class="front flex gap-4 items-center">
     <div
-      class="md:w-28 overflow-hidden rounded-full md:border-8 border-4 border-tertiary"
+      class="md:w-28 w-28 overflow-hidden rounded-full md:border-8 border-4 border-tertiary"
     >
-      <Image src={FeatureProjectImage} alt="Imagen de Kalan" />
+      <Image src={FeatureProjectImage} alt="Imagen de Kalan" loading="eager" />
     </div>
     <div class="w-full text-pretty">
-      <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
-        Kalan App
-      </h1>
+      <div class="flex items-center gap-4">
+        <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
+          Kalan App
+        </h1>
+        <ul class="flex gap-1">
+          <li><DartLogo className="w-5 h-5" /></li>
+          <li><FirebaseLogo className="w-5 h-5" /></li>
+          <li><FlutterLogo className="w-5 h-5" /></li>
+        </ul>
+      </div>
 
-      <p class="font-Onest font-medium">
+      <p class="relative font-Onest font-medium mt-2">
         Kalan is an application whose objective is to <strong
           >monitor the real-time location of your loved ones.</strong
         > It has innovative features such as monitoring <strong
@@ -38,11 +45,6 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
     <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
       Kalan App
     </h1>
-    <ul class="flex">
-      <li><DartLogo /></li>
-      <li><FirebaseLogo /></li>
-      <li><FlutterLogo /></li>
-    </ul>
   </div>
 </div>
 

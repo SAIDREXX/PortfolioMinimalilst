@@ -1,105 +1,159 @@
 ---
+import AboutMe from "@/components/AboutMe.astro";
+
 import Github from "@/components/Icons/GithubLogo.astro";
+import KalanCard from "@/components/KalanCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import Linkedin from "@/components/Icons/LinkedInLogo.astro";
+import MyImage from "@/img/me.webp";
+import ShortCommentsCard from "@/components/ShortCommentsCard.astro";
+import SkillGrid from "@/components/SkillGrid.astro";
 import Twitter from "@/components/Icons/TwitterLogo.astro";
+import { Image } from "astro:assets";
+import CopyIcon from "@/components/Icons/CopyIcon.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Portfolio Oficial De SAIDREXXX">
   <main class="mx-auto max-w-3xl px-5 mb-5 flex flex-col gap-10">
     <section class="flex flex-col gap-16">
-      <article class="flex mt-10 items-center gap-6">
+      <article class="flex mt-10 gap-6 items-center justify-center">
         <div
-          class="w-40 h-40 overflow-hidden rounded-full border-8 border-tertiary"
+          class="md:w-40 overflow-hidden rounded-full md:border-8 border-4 border-secondary_alt"
         >
-          <img src="me.webp" alt="" />
+          <Image src={MyImage} alt="Foto de Saidrexx" loading="eager" />
         </div>
         <div>
-          <h1 class="font-Onest font-bold text-5xl text-secondary">
+          <h1
+            class="font-Onest font-bold md:text-5xl text-4xl text-primary_alt"
+          >
             What's Up!
           </h1>
-          <h2 class="font-Onest font-bold text-2xl text-primary">
+          <h2 class="font-Onest font-bold text-2xl text-primary_alt">
             I'm SAIDREXXX
           </h2>
-          <h3 class="font-Onest font-bold text-ls text-tertiary">
-            Ingeniero en Sistemas Computacionales
+
+          <h3 class="font-Onest font-bold text-ls text-primary_alt">
+            Computer Systems Engineer
           </h3>
 
           <ul class="flex pt-2 items-center [&>li]:pr-4">
             <li>
-              <a href="https://github.com/SAIDREXX"
+              <a
+                href="https://github.com/SAIDREXX"
+                aria-label="Github Profile"
+                target="_blank"
+                rel="noreferrer noopener"
                 ><Github
-                  className="hover:transition hover:-translate-y-1 hover:duration-300"
+                  className="w-7 h-7 hover:transition hover:-translate-y-1 ease-in-out duration-300"
+                  color="#456463"
                 /></a
               >
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/saidrexxdemeneghi"
+              <a
+                href="https://www.linkedin.com/in/saidrexxdemeneghi"
+                aria-label="Linkedin Profile"
+                target="_blank"
+                rel="noreferrer noopener"
                 ><Linkedin
-                  className="hover:transition hover:-translate-y-1 hover:duration-300"
+                  className="hover:transition hover:-translate-y-1 ease-in-out duration-300"
                 /></a
               >
             </li>
             <li>
-              <a href="https://twitter.com/SAIDREXXX"
+              <a
+                href="https://twitter.com/SAIDREXXX"
+                aria-label="Twitter Profile"
+                target="_blank"
+                rel="noreferrer noopener"
                 ><Twitter
-                  className="hover:transition hover:-translate-y-1 hover:duration-300"
+                  className="hover:transition hover:-translate-y-1 ease-in-out duration-300"
                 /></a
               >
             </li>
             <li>
               <button
-                class="bg-secondary p-2 rounded-xl text-white font-Onest font-bold"
-                >Descargar CV</button
+                class="bg-primary_alt p-2 rounded-xl text-white font-Onest font-bold"
+                aria-label="Download CV">Descargar CV</button
               >
             </li>
           </ul>
         </div>
       </article>
+      <hr class="border-quaternary border-dashed" />
+      <h1 class="font-Onest font-bold text-2xl text-primary_alt">
+        Featured Project⭐
+      </h1>
+      <section>
+        <KalanCard />
+      </section>
+      <hr class="border-quaternary border-dashed" />
+      <h1 class="font-Onest font-bold text-2xl text-primary_alt">
+        Top Projects🏆
+      </h1>
+      <section>
+        <article class="md:grid md:grid-cols-2 md:gap-2">
+          <ShortCommentsCard />
+        </article>
+      </section>
+      <hr class="border-quaternary border-dashed" />
+      <h1 class="font-Onest font-bold text-2xl text-primary_alt">Skills🎯</h1>
+      <section>
+        <SkillGrid />
+      </section>
+      <h1 class="font-Onest font-bold text-2xl text-primary_alt">About Me🦖</h1>
+      <section>
+        <AboutMe />
+      </section>
+      <hr class="border-quaternary border-dashed" />
+      <div>
+        <h1 class="font-Onest font-bold text-2xl text-primary">Contact Me📧</h1>
+        <div class="flex items-center gap-2">
+          <button id="contact-button">
+            <em>
+              <small
+                id="textToCopy"
+                class="font-Onest font-medium text-tertiary_alt"
+                >saidrexxdev@gmail.com</small
+              ></em
+            >
+          </button>
+
+          <div class="hidden duration-150 ease-in-out" id="svg">
+            <CopyIcon className="w-4 h-4" />
+          </div>
+        </div>
+      </div>
+
+      <section></section>
+      <hr class="border-quaternary border-dashed" />
     </section>
-    <hr class="border-quaternary border-dashed" />
-    <h1 class="font-Onest font-bold text-2xl text-primary">Featured Project</h1>
-    <section>
-      <!--TODO: Crear el Featured Proyect una vez exista jajaja -->
-    </section>
-    <hr class="border-quaternary border-dashed" />
-    <h1 class="font-Onest font-bold text-2xl text-primary">Top Projects</h1>
-    <section></section>
-    <hr class="border-quaternary border-dashed" />
   </main>
 </Layout>
 
-<!--
-	<section
-          class="max-w-lg font-Onest flex flex-col gap-2 text-pretty text-primary font-medium"
-        >
-          
-          <p>
-            My real name is <strong>Said Demeneghi</strong> but I'm known as <strong
-              >SAIDREXXX</strong
-            > on the internet. I'm a <strong>Full Stack Developer </strong>from <strong
-              >México</strong
-            >. The first time I wrote a line of code was in 2016 and since then
-            I've been learning and improving my skills.
-          </p>
+<script>
+  document.getElementById("contact-button")?.addEventListener("click", () => {
+    const textToCopy = document.getElementById("textToCopy")?.innerText;
+    if (textToCopy) {
+      navigator.clipboard.writeText(textToCopy);
+      document
+        .getElementById("contact-button")
+        ?.classList.add("animate-pulsing");
+    }
+  });
 
-          <p>
-            In 2023 I was a finalist in an International Mobile Application
-            Development Tournament <strong
-              ><a
-                target="_blank"
-                rel="noreferrer noopener"
-                href="https://www.tuapp.org">(TuApp)</a
-              ></strong
-            > where universities from all over Latin America and more than 150 teams
-            participated.
-          </p>
+  document
+    .getElementById("contact-button")
+    ?.addEventListener("mouseenter", () => {
+      document.getElementById("svg")?.classList.remove("hidden");
+    });
 
-          <p>
-            With a solid experience in web and mobile application development,
-            as well as in the creation of tools for the community, such as
-            extensions for VS Code, I am able to provide innovative and quality
-            solutions.
-          </p>
-        </section>
- -->
+  document
+    .getElementById("contact-button")
+    ?.addEventListener("mouseleave", () => {
+      document.getElementById("svg")?.classList.add("hidden");
+      document
+        .getElementById("contact-button")
+        ?.classList.remove("animate-pulsing");
+    });
+</script>
