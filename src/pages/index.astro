@@ -1,38 +1,39 @@
 ---
+import { Image } from "astro:assets";
 import AboutMe from "@/components/AboutMe.astro";
-
+import CopyIcon from "@/components/Icons/CopyIcon.astro";
 import Github from "@/components/Icons/GithubLogo.astro";
 import KalanCard from "@/components/KalanCard.astro";
+import LanguageGrid from "@/components/LanguageGrid.astro";
 import Layout from "@/layouts/Layout.astro";
 import Linkedin from "@/components/Icons/LinkedInLogo.astro";
 import MyImage from "@/img/me.webp";
 import ShortCommentsCard from "@/components/ShortCommentsCard.astro";
 import SkillGrid from "@/components/SkillGrid.astro";
 import Twitter from "@/components/Icons/TwitterLogo.astro";
-import { Image } from "astro:assets";
-import CopyIcon from "@/components/Icons/CopyIcon.astro";
+import ToastComponent from "@/components/ToastComponent";
 ---
 
 <Layout title="Portfolio Oficial De SAIDREXXX">
+  <ToastComponent client:only="react" />
   <main class="mx-auto max-w-3xl px-5 mb-5 flex flex-col gap-10">
     <section class="flex flex-col gap-16">
       <article class="flex mt-10 gap-6 items-center justify-center">
         <div
-          class="md:w-40 overflow-hidden rounded-full md:border-8 border-4 border-secondary_alt"
+          class="md:w-40 overflow-hidden rounded-full md:border-8 border-4 border-text1"
         >
           <Image src={MyImage} alt="Foto de Saidrexx" loading="eager" />
         </div>
         <div>
-          <h1
-            class="font-Onest font-bold md:text-5xl text-4xl text-primary_alt"
-          >
+          <h1 class="font-Onest font-bold md:text-5xl text-4xl text-text2">
             What's Up!
           </h1>
-          <h2 class="font-Onest font-bold text-2xl text-primary_alt">
-            I'm SAIDREXXX
-          </h2>
+          <span class="font-Onest font-bold text-2xl text-text2">I'm</span>
+          <span class="font-Onest font-bold text-2xl text-primary"
+            >Saidrexxx</span
+          >
 
-          <h3 class="font-Onest font-bold text-ls text-primary_alt">
+          <h3 class="font-Onest font-bold text-ls text-text2">
             Computer Systems Engineer
           </h3>
 
@@ -80,30 +81,29 @@ import CopyIcon from "@/components/Icons/CopyIcon.astro";
           </ul>
         </div>
       </article>
-      <hr class="border-quaternary border-dashed" />
-      <h1 class="font-Onest font-bold text-2xl text-primary_alt">
+      <hr class="border-quaternary border-dashed bg-background3" />
+      <h1 class="font-Onest font-bold text-2xl text-primary">
         Featured Project⭐
       </h1>
       <section>
         <KalanCard />
       </section>
       <hr class="border-quaternary border-dashed" />
-      <h1 class="font-Onest font-bold text-2xl text-primary_alt">
-        Top Projects🏆
-      </h1>
+      <h1 class="font-Onest font-bold text-2xl text-primary">Top Projects🏆</h1>
       <section>
         <article class="md:grid md:grid-cols-2 md:gap-2">
           <ShortCommentsCard />
         </article>
       </section>
       <hr class="border-quaternary border-dashed" />
-      <h1 class="font-Onest font-bold text-2xl text-primary_alt">Skills🎯</h1>
+      <h1 class="font-Onest font-bold text-2xl text-primary">Skills🎯</h1>
       <section>
         <SkillGrid />
       </section>
-      <h1 class="font-Onest font-bold text-2xl text-primary_alt">About Me🦖</h1>
-      <section>
+      <h1 class="font-Onest font-bold text-2xl text-primary">About Me🦖</h1>
+      <section class="flex flex-col gap-2">
         <AboutMe />
+        <LanguageGrid />
       </section>
       <hr class="border-quaternary border-dashed" />
       <div>
@@ -132,13 +132,12 @@ import CopyIcon from "@/components/Icons/CopyIcon.astro";
 </Layout>
 
 <script>
+  import { toast } from "sonner";
   document.getElementById("contact-button")?.addEventListener("click", () => {
     const textToCopy = document.getElementById("textToCopy")?.innerText;
     if (textToCopy) {
       navigator.clipboard.writeText(textToCopy);
-      document
-        .getElementById("contact-button")
-        ?.classList.add("animate-pulsing");
+      toast.success("Email Copiado al portapapeles");
     }
   });
 

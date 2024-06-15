@@ -9,7 +9,7 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
 
 <div
   id="card"
-  class="card flex w-full bg-background shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-primary"
+  class="card flex w-full bg-background2 shadow-xl p-4 rounded-3xl cursor-pointer relative border border-dashed border-text1"
 >
   <div class="front flex gap-4 items-center">
     <div
@@ -19,7 +19,7 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
     </div>
     <div class="w-full text-pretty">
       <div class="flex items-center gap-4">
-        <h1 class="font-Onest font-bold md:text-3xl text-4xl text-secondary">
+        <h1 class="font-Onest font-bold md:text-3xl text-4xl text-primary">
           Kalan App
         </h1>
         <ul class="flex gap-1">
@@ -29,7 +29,7 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
         </ul>
       </div>
 
-      <p class="relative font-Onest font-medium mt-2">
+      <p class="relative font-Onest font-medium mt-2 text-text1">
         Kalan is an application whose objective is to <strong
           >monitor the real-time location of your loved ones.</strong
         > It has innovative features such as monitoring <strong
@@ -39,6 +39,10 @@ import FlutterLogo from "./Icons/FlutterLogo.astro";
           >numbers that change depending on your current location.</strong
         >
       </p>
+
+      <div class="flex items-center justify-end text-sm">
+        <i><small class="relative">Click Me!</small></i>
+      </div>
     </div>
   </div>
   <div class="back absolute flex flex-col items-center w-full h-full pt-8 pr-8">

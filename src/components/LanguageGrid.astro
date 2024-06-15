@@ -1,0 +1,30 @@
+---
+import AndorraLogo from "./Icons/AndorraLogo.astro";
+import ItalyLogo from "./Icons/ItalyLogo.astro";
+import MexicoLogo from "./Icons/MexicoLogo.astro";
+import SkillCard from "./SkillCard.astro";
+import USLogo from "./Icons/USLogo.astro";
+---
+
+<div class="grid md:grid-cols-4 grid-cols-3 gap-4">
+  <SkillCard skillName="Spanish">
+    <div slot="logo">
+      <MexicoLogo className="w-8 h-8" />
+    </div>
+  </SkillCard>
+  <SkillCard skillName="English">
+    <div slot="logo">
+      <USLogo className="w-8 h-8" />
+    </div>
+  </SkillCard>
+  <SkillCard skillName="Italian">
+    <div slot="logo">
+      <ItalyLogo className="w-8 h-8" />
+    </div>
+  </SkillCard>
+  <SkillCard skillName="Catalan">
+    <div slot="logo">
+      <AndorraLogo className="w-8 h-8" />
+    </div>
+  </SkillCard>
+</div>
