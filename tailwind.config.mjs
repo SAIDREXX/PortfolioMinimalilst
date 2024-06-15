@@ -6,17 +6,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#54787d",
-				primary_alt: "#3B535A",
-				secondary: "#6b9997",
-				secondary_alt: "#375453",
-				tertiary: "#8ba6ac",
-				tertiary_alt: "#516265",
-				quaternary: "#C9D8E5",
-				quaternary_alt: "#283F53",
-				quinary: "#32494d",
-				background: "#f8f8ec",
-				background_dark: "#121212",
+				primary:"#428b8f",
+				primary2:"5C5C5C",
+				accent: "#EBEBEB",
+				text1: "#333333",
+				text2: "#5C5C5C",
+				background: "#FFFFF3",
+				background2: "#F5F5E9",
+				background3: "#CCCCC0",
 			},
 			fontFamily: {
 				Onest: ["Onest Variable", "sans-serif"],
